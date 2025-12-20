@@ -14,22 +14,20 @@ There's a fine line between:
 - **Too much telemetry** → noise, high costs, battery drain
 - **Too little telemetry** → blind spots when debugging production issues
 
-The result? Teams either:
-- Instrument everything and drown in useless data
-- Instrument nothing and can't debug when things break
-- Copy vendor docs without understanding what actually matters
-
-**This plugin teaches Claude "User-Focused Observability"** — linking user intentions and outcomes with app telemetry at the workflow level, so you can answer questions like:
-
+The result? Teams ship apps and then realize they can't answer basic questions:
 - "Why did 12% of users fail to complete onboarding?"
 - "What was happening in the app when this crash occurred?"
 - "Which screens are slow for users on older devices?"
+
+**This plugin helps you instrument your app so you CAN answer these questions** — before you need to, not after something breaks.
+
+It teaches Claude "User-Focused Observability": linking user intentions and outcomes with app telemetry at the workflow level.
 
 Instead of generic advice, you get:
 - **What to measure** for your specific user journeys
 - **What data to attach** so telemetry is actionable (not just "log errors")
 - **How to balance** signal vs noise vs cost
-- **Platform-specific patterns** that actually work
+- **Platform-specific patterns** for iOS, Android, and React Native
 
 ## Who Is This For?
 
