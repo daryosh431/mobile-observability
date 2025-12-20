@@ -9,7 +9,7 @@ Claude Code plugin for mobile app observability. Provides commands, agents, skil
 | Component | Location | Description |
 |-----------|----------|-------------|
 | Commands | `commands/` | `/instrument`, `/audit` |
-| Agents | `agents/` | `codebase-analyzer` |
+| Agents | `agents/` | `codebase-analyzer`, `instrumentation-reviewer` |
 | Skills | `skills/` | 8 focused skills (see below) |
 | Hooks | `hooks/hooks.json` | Anti-pattern warnings for Swift/Kotlin/TypeScript |
 | References | `references/` | 15 reference files + templates + vendor guides |

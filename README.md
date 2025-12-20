@@ -119,10 +119,15 @@ Nine focused skills provide expert guidance:
 | Agent | Use Case |
 |-------|----------|
 | `codebase-analyzer` | Explores your codebase to understand architecture and find instrumentation opportunities |
+| `instrumentation-reviewer` | Reviews code for observability quality — anti-patterns, missing context, naming |
 
 **Use agents directly:**
 ```
+# Analyze a codebase for instrumentation opportunities
 Launch the codebase-analyzer agent to analyze my iOS app
+
+# Review instrumentation code before merging
+Launch the instrumentation-reviewer agent on ./src/checkout/
 ```
 
 ## Anti-Pattern Hooks
@@ -175,7 +180,7 @@ Ready-to-use templates for:
 ```
 mobile-observability/
 ├── commands/           # /instrument, /audit
-├── agents/             # codebase-analyzer
+├── agents/             # codebase-analyzer, instrumentation-reviewer
 ├── skills/             # 9 focused skills
 ├── hooks/              # Anti-pattern detection
 ├── references/         # 15+ guides + templates + vendor docs
