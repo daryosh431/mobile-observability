@@ -8,17 +8,28 @@ A Claude Code plugin that gives Claude expert knowledge in mobile app observabil
 
 ## Why This Plugin?
 
-Mobile observability is hard:
-- **Fragmented knowledge** across iOS, Android, and cross-platform frameworks
-- **Vendor-specific patterns** that don't transfer between Sentry, Datadog, Embrace, etc.
-- **Easy to miss** critical instrumentation (symbolication, breadcrumbs, user context)
-- **Performance pitfalls** like blocking the main thread with telemetry
+**Most teams don't know what to instrument, with what data, to make it actionable.**
 
-This plugin gives Claude deep expertise in mobile observability best practices, so you can:
-- Get instrumentation plans tailored to your codebase
-- Debug crashes with expert analysis
-- Avoid common anti-patterns automatically
-- Follow industry standards (OTel-compatible naming, JTBD framework)
+There's a fine line between:
+- **Too much telemetry** → noise, high costs, battery drain
+- **Too little telemetry** → blind spots when debugging production issues
+
+The result? Teams either:
+- Instrument everything and drown in useless data
+- Instrument nothing and can't debug when things break
+- Copy vendor docs without understanding what actually matters
+
+**This plugin teaches Claude "User-Focused Observability"** — linking user intentions and outcomes with app telemetry at the workflow level, so you can answer questions like:
+
+- "Why did 12% of users fail to complete onboarding?"
+- "What was happening in the app when this crash occurred?"
+- "Which screens are slow for users on older devices?"
+
+Instead of generic advice, you get:
+- **What to measure** for your specific user journeys
+- **What data to attach** so telemetry is actionable (not just "log errors")
+- **How to balance** signal vs noise vs cost
+- **Platform-specific patterns** that actually work
 
 ## Who Is This For?
 
@@ -111,7 +122,7 @@ The plugin's skills activate automatically when you ask questions like:
 
 ## Skills
 
-Eight focused skills provide expert guidance:
+Nine focused skills provide expert guidance:
 
 | Skill | Triggers When You Ask About |
 |-------|----------------------------|
@@ -123,6 +134,7 @@ Eight focused skills provide expert guidance:
 | `navigation-latency` | "Track screen loads", "Measure TTI" |
 | `network-tracing` | "Trace API calls", "Monitor network requests" |
 | `user-journey-tracking` | "Track funnels", "Measure conversion" |
+| `symbolication-setup` | "dSYM", "ProGuard", "source maps", "stack traces unreadable" |
 
 ## Agents
 
@@ -185,7 +197,7 @@ Ready-to-use templates for:
 mobile-observability/
 ├── commands/           # /instrument, /diagnose, /audit
 ├── agents/             # codebase-analyzer, issue-analyzer
-├── skills/             # 8 focused skills
+├── skills/             # 9 focused skills
 ├── hooks/              # Anti-pattern detection
 ├── references/         # 15+ guides + templates + vendor docs
 └── .claude-plugin/     # Plugin manifest
