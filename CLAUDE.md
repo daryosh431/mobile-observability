@@ -12,7 +12,7 @@ Claude Code plugin for mobile app observability. Provides commands, agents, skil
 | Agents | `agents/` | `codebase-analyzer`, `instrumentation-reviewer` |
 | Skills | `skills/` | 8 focused instrumentation skills |
 | Hooks | `hooks/hooks.json` | Anti-pattern warnings for Swift/Kotlin/TypeScript |
-| References | `references/` | 15 reference files + templates + vendor guides |
+| References | `references/` | 20+ guides, templates, vendor docs |
 
 ## Key Commands
 
@@ -26,7 +26,7 @@ Claude Code plugin for mobile app observability. Provides commands, agents, skil
 | Skill | Trigger |
 |-------|---------|
 | `instrumentation-planning` | "What should I measure?" |
-| `crash-debugging` | "Why is my app crashing?" |
+| `crash-debugging` | "How to capture crashes with context" |
 | `session-replay` | "Set up session replay" |
 | `interaction-latency` | "Track button response time" |
 | `navigation-latency` | "Track screen load time" |

@@ -1,49 +1,91 @@
 ---
 name: crash-debugging
-description: Analyze mobile crashes, ANRs, and fatal errors. Use when debugging crash logs, stack traces, or "why is my app crashing?"
+description: Set up crash instrumentation with actionable context. Use when configuring crash capture, error boundaries, or breadcrumb strategies.
 ---
 
-# Crash Debugging
+# Crash Instrumentation
 
-Diagnose crashes across iOS, Android, and React Native.
+Capture crashes with the context needed to debug them.
 
-## Quick Identification
+## Core Principle
 
-| Signal | Platform | Likely Cause |
-|--------|----------|--------------|
-| `EXC_BAD_ACCESS` | iOS | Null pointer, dangling reference |
-| `SIGABRT` | iOS | Force unwrap, assertion |
-| `SIGKILL` | iOS | Watchdog, memory pressure |
-| `NullPointerException` | Android | Missing null check |
-| `ANR` | Android | Main thread blocked >5s |
-| `OutOfMemoryError` | Android | Memory leak |
+A crash report without context is useless. Every crash should include:
 
-## Analysis Steps
+| Context | Why | Example |
+|---------|-----|---------|
+| `screen` | Where it happened | "CheckoutScreen" |
+| `job_name` | What user was doing | "checkout" |
+| `job_step` | Where in the flow | "payment" |
+| `breadcrumbs` | What led here | Last 20 user actions |
+| `app_version` | Release correlation | "1.2.3" |
+| `user_segment` | Who's affected | "premium", "trial" |
 
-1. **Check symbolication** - addresses without symbols = need dSYM/ProGuard
-2. **Find crash frame** - top of stack trace
-3. **Find app code** - first frame in your code (not system)
-4. **Check thread** - main thread = UI issue
+## Breadcrumb Strategy
 
-## Common Fixes
+Breadcrumbs are the trail leading to a crash. Capture:
 
-**iOS force unwrap:**
+| Category | What to Log | Example |
+|----------|-------------|---------|
+| `navigation` | Screen transitions | "HomeScreen → CartScreen" |
+| `user` | Taps, inputs, gestures | "Tapped checkout button" |
+| `network` | API calls (not payloads) | "POST /api/orders started" |
+| `state` | Key state changes | "Cart updated: 3 items" |
+| `error` | Non-fatal errors | "Retry #2 for payment" |
+
+**Limit:** Keep last 20-50 breadcrumbs. More is noise.
+
+## Error Boundaries
+
+Catch errors before they crash the app:
+
 ```swift
-// Bad: let x = optional!
-// Good: guard let x = optional else { return }
+// iOS - capture context before crash
+func captureError(_ error: Error, screen: String, job: String?) {
+    Observability.captureError(error, context: [
+        "screen": screen,
+        "job_name": job ?? "unknown",
+        "session_duration": sessionDuration(),
+        "memory_pressure": memoryPressure()
+    ])
+}
 ```
 
-**Android lifecycle:**
 ```kotlin
-// Bad: accessing view after onDestroyView
-// Good: use viewLifecycleOwner.lifecycleScope
+// Android - uncaught exception handler
+Thread.setDefaultUncaughtExceptionHandler { thread, throwable ->
+    Observability.captureError(throwable, mapOf(
+        "thread" to thread.name,
+        "screen" to currentScreen,
+        "job_name" to currentJob
+    ))
+    previousHandler?.uncaughtException(thread, throwable)
+}
 ```
+
+## What NOT to Attach
+
+| Don't | Why |
+|-------|-----|
+| Full stack traces in breadcrumbs | Redundant, SDK captures this |
+| User input text | PII risk |
+| Full request/response bodies | Size limits, PII |
+| Entire app state | Unbounded, noise |
+
+## Crash Types to Handle
+
+| Platform | Type | Instrumentation |
+|----------|------|-----------------|
+| iOS | `EXC_BAD_ACCESS` | Breadcrumbs, memory context |
+| iOS | `SIGKILL` (watchdog) | Background task tracking |
+| Android | `ANR` | Main thread breadcrumbs |
+| Android | `OutOfMemoryError` | Memory tracking |
+| React Native | JS exceptions | Error boundaries |
 
 ## Implementation
 
 See `references/crash-reporting.md` for:
-- Crash type deep dives
-- Symbolication setup
-- Breadcrumb strategies
+- Platform-specific crash capture setup
+- Breadcrumb implementation patterns
+- Vendor SDK configuration
 
-See `references/{platform}-native.md` for platform-specific patterns.
+See `skills/symbolication-setup` for readable stack traces.
