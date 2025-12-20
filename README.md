@@ -4,37 +4,32 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Plugin-blueviolet)](https://claude.ai/code)
 [![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android%20%7C%20React%20Native-green)](https://github.com/calube/mobile-observability)
 
-A Claude Code plugin that gives Claude expert knowledge in mobile app observability—crash reporting, performance monitoring, session replay, and instrumentation for iOS, Android, and React Native.
+A Claude Code plugin that teaches Claude mobile observability best practices — what to instrument, with what data, so your telemetry is actually actionable.
 
-## Why This Plugin?
+## What This Plugin Does
 
-**Most teams don't know what to instrument, with what data, to make it actionable.**
+This plugin gives Claude expert knowledge in mobile instrumentation so it can help you:
 
-There's a fine line between:
-- **Too much telemetry** → noise, high costs, battery drain
-- **Too little telemetry** → blind spots when debugging production issues
+- **Decide what to measure** — not everything, just what matters for debugging and understanding user behavior
+- **Attach the right context** — so errors and events are actionable, not just noise
+- **Avoid common mistakes** — high cardinality tags, PII leaks, unbounded payloads, missing correlation
+- **Follow platform patterns** — iOS (Swift/SwiftUI), Android (Kotlin/Compose), React Native
 
-The result? Teams ship apps and then realize they can't answer basic questions:
-- "Why did 12% of users fail to complete onboarding?"
-- "What was happening in the app when this crash occurred?"
-- "Which screens are slow for users on older devices?"
+## The Problem It Solves
 
-**This plugin helps you instrument your app so you CAN answer these questions** — before you need to, not after something breaks.
+Most teams instrument poorly because they don't know what data makes telemetry actionable. They either:
 
-It teaches Claude "User-Focused Observability": linking user intentions and outcomes with app telemetry at the workflow level.
+- **Instrument too little** → can't debug production issues ("why did onboarding fail for 12% of users?")
+- **Instrument too much** → noise, high costs, battery drain
+- **Attach wrong data** → errors without context, high-cardinality metrics, missing user journey correlation
 
-Instead of generic advice, you get:
-- **What to measure** for your specific user journeys
-- **What data to attach** so telemetry is actionable (not just "log errors")
-- **How to balance** signal vs noise vs cost
-- **Platform-specific patterns** for iOS, Android, and React Native
+This plugin teaches Claude "User-Focused Observability": linking user intentions and outcomes with app telemetry at the workflow level — so you can answer the questions that matter when something breaks.
 
 ## Who Is This For?
 
-- **Mobile developers** adding observability to iOS/Android/React Native apps
-- **Teams adopting** Sentry, Datadog, Embrace, or Bugsnag
-- **Anyone debugging** mobile crashes, ANRs, or performance issues
-- **Developers wanting** to instrument apps the right way from the start
+- Mobile developers adding observability to iOS, Android, or React Native apps
+- Teams setting up Sentry, Datadog, Embrace, or Bugsnag
+- Anyone who wants to instrument their app correctly the first time
 
 ## Prerequisites
 
