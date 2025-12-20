@@ -125,7 +125,7 @@ Warnings when editing `.swift`, `.kt`, or `.ts` files:
 - Session replay and privacy
 
 **Vendors**
-- Sentry, Datadog, Embrace, Bugsnag setup guides
+- Sentry, Datadog, Embrace, Bugsnag, bitdrift setup guides
 
 **Templates**
 - Screen load tracking
@@ -147,7 +147,7 @@ mobile-observability/
 ## Who This Is For
 
 - Mobile developers adding observability to iOS, Android, or React Native
-- Teams setting up Sentry, Datadog, Embrace, or Bugsnag
+- Teams setting up Sentry, Datadog, Embrace, Bugsnag, or bitdrift
 - Anyone who wants actionable telemetry, not just data
 
 ## Contributing

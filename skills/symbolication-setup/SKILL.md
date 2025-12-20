@@ -152,6 +152,7 @@ sentry-cli sourcemaps explain <event-id>
 | Crashlytics | Firebase Console → Crashlytics → Missing dSYMs |
 | Bugsnag | `bugsnag-cli upload` with `--dry-run` |
 | Datadog | Dashboard → Error Tracking → Symbol Files |
+| bitdrift | Dashboard or CLI for dSYM, Gradle plugin for ProGuard |
 
 ## Related Skills
 
