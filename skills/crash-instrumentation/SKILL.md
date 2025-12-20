@@ -1,5 +1,5 @@
 ---
-name: crash-debugging
+name: crash-instrumentation
 description: Set up crash instrumentation with actionable context. Use when configuring crash capture, error boundaries, or breadcrumb strategies.
 ---
 

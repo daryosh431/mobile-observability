@@ -6,7 +6,7 @@
 
 **Teach Claude how to instrument mobile apps correctly.**
 
-This plugin gives Claude expert knowledge in mobile observability — what to instrument, what context to attach, and what mistakes to avoid. The result: telemetry that's actually useful when something breaks.
+This plugin gives Claude expert knowledge in mobile observability — what to instrument, what context to attach, and what mistakes to avoid. The result: telemetry that's useful when something breaks.
 
 ## The Problem
 
@@ -22,9 +22,12 @@ This plugin teaches Claude **User-Focused Observability** — linking user inten
 
 ## Installation
 
+Requires [Claude Code](https://claude.ai/code).
+
 ```bash
 git clone https://github.com/calube/mobile-observability.git
-cd mobile-observability && claude plugins install .
+cd mobile-observability
+claude plugins install .
 ```
 
 ## Workflows
@@ -79,12 +82,12 @@ Skills activate automatically:
 
 ### Skills
 
-8 focused skills for common instrumentation tasks:
+8 skills for common instrumentation tasks:
 
 | Skill | Use When |
 |-------|----------|
 | `instrumentation-planning` | Deciding what to measure |
-| `crash-debugging` | Setting up crash capture with context |
+| `crash-instrumentation` | Setting up crash capture with context |
 | `session-replay` | Configuring visual debugging |
 | `interaction-latency` | Tracking button/tap response time |
 | `navigation-latency` | Measuring screen load and TTI |
@@ -94,7 +97,7 @@ Skills activate automatically:
 
 ### Anti-Pattern Hooks
 
-Automatic warnings when editing `.swift`, `.kt`, or `.ts` files:
+Warnings when editing `.swift`, `.kt`, or `.ts` files:
 
 - **High cardinality tags** — User IDs as metric labels explode costs
 - **Unbounded payloads** — Attaching entire state objects

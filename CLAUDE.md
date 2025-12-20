@@ -26,7 +26,7 @@ Claude Code plugin for mobile app observability. Provides commands, agents, skil
 | Skill | Trigger |
 |-------|---------|
 | `instrumentation-planning` | "What should I measure?" |
-| `crash-debugging` | "How to capture crashes with context" |
+| `crash-instrumentation` | "How to capture crashes with context" |
 | `session-replay` | "Set up session replay" |
 | `interaction-latency` | "Track button response time" |
 | `navigation-latency` | "Track screen load time" |
