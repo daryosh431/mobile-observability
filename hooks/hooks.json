@@ -8,7 +8,7 @@
       "hooks": [
         {
           "type": "prompt",
-          "prompt": "When editing Swift files for observability, watch for these anti-patterns:\n\n1. **PII in logs** - Never log email, phone, or user-provided text\n2. **Sync telemetry** - Never block main thread for analytics\n3. **Force unwraps in crash handlers** - Avoid `!` in error handling code\n4. **Missing offline handling** - Queue events when offline\n\nIf you see these patterns, flag them for the user."
+          "prompt": "When adding observability instrumentation to Swift files, watch for:\n\n1. **PII in breadcrumbs/logs** - Never log email, phone, passwords, or user-provided text in telemetry\n2. **Main thread blocking** - Use async dispatch for analytics calls, never block UI\n3. **Offline handling** - Queue telemetry events when network unavailable\n\nFlag these issues for the user if detected."
         }
       ]
     },
@@ -20,7 +20,7 @@
       "hooks": [
         {
           "type": "prompt",
-          "prompt": "When editing Kotlin files for observability, watch for these anti-patterns:\n\n1. **PII in logs** - Never log email, phone, or user-provided text\n2. **Main thread telemetry** - Use background dispatcher for analytics\n3. **Null assertions in crash handlers** - Avoid `!!` in error handling\n4. **Missing offline handling** - Queue events when offline\n\nIf you see these patterns, flag them for the user."
+          "prompt": "When adding observability instrumentation to Kotlin files, watch for:\n\n1. **PII in breadcrumbs/logs** - Never log email, phone, passwords, or user-provided text in telemetry\n2. **Main thread blocking** - Use Dispatchers.IO or background scope for analytics calls\n3. **Offline handling** - Queue telemetry events when network unavailable\n\nFlag these issues for the user if detected."
         }
       ]
     },
@@ -32,7 +32,7 @@
       "hooks": [
         {
           "type": "prompt",
-          "prompt": "When editing TypeScript/React Native files for observability:\n\n1. **PII in logs** - Never log email, phone, or user-provided text\n2. **Serialization issues** - Ensure data is JSON-serializable before sending to native\n3. **Error boundaries** - Wrap components that might crash\n4. **Source maps** - Ensure source maps are uploaded for symbolication\n\nIf you see these patterns, flag them for the user."
+          "prompt": "When adding observability instrumentation to React Native/TypeScript files, watch for:\n\n1. **PII in breadcrumbs/logs** - Never log email, phone, passwords, or user-provided text in telemetry\n2. **Native bridge serialization** - Ensure telemetry payloads are JSON-serializable before sending to native modules\n3. **Source maps** - Verify source maps are configured for crash symbolication\n\nFlag these issues for the user if detected."
         }
       ]
     }
