@@ -343,6 +343,43 @@ BAD:  Block main thread to send analytics
 GOOD: Queue events, send in background/batches
 ```
 
+### 6. Localized Strings in Telemetry
+
+**Golden Rule: Never use localized strings or localized error descriptions in observability data.**
+
+All telemetry strings must be in a single, consistent language (English for most teams). Localized strings make logs unsearchable and errors ungroupable.
+
+```swift
+// BAD: Uses localized error description
+logger.error(error.localizedDescription)  // "Verbindung fehlgeschlagen" in German
+logger.error(NSLocalizedString("network_error", comment: ""))
+
+// GOOD: Use error codes or English-only constants
+logger.error("network_connection_failed", attributes: ["code": error.code])
+logger.error(ObservabilityError.networkConnectionFailed.rawValue)
+```
+
+```kotlin
+// BAD: Uses localized resources
+logger.error(context.getString(R.string.error_network))  // Japanese on JP devices
+
+// GOOD: English-only constants
+logger.error("network_connection_failed", mapOf("code" to error.code))
+logger.error(ObservabilityError.NETWORK_CONNECTION_FAILED)
+```
+
+**Why this matters:**
+- A user in Japan shouldn't create logs in Japanese that your US team can't read
+- Error grouping breaks when "Connection failed" and "接続に失敗しました" are different strings
+- Searching logs for "timeout" won't find "Zeitüberschreitung"
+- Dashboards and alerts become unreliable with mixed languages
+
+**What to do instead:**
+- Define error constants in English
+- Use error codes that can be looked up
+- Store localized messages for user display separately from telemetry
+- If you must include user-facing text, put it in a separate field: `{ "error": "network_timeout", "user_message": "接続に失敗しました" }`
+
 ## Testing Checklist
 
 Before shipping:
